@@ -5,10 +5,15 @@ namespace TelephoneBook.DatabaseStructure.Repository
 {
     public class TelephonesRepository : Repository<Telephone>, ITelephonesRepository
     {
+        public TelephonesRepository(Phones phones)
+        {
+            Context = phones;
+        }
+
         public override bool Edit(Telephone val)
         {
-            using (Context = new Phones())
-            {
+            //using (Context = new Phones())
+            //{
                 Telephone telephone = Context.Telephones.Find(val.Id);
                 if (telephone == null)
                 {
@@ -17,7 +22,7 @@ namespace TelephoneBook.DatabaseStructure.Repository
                 val.CopyTo(telephone);
                 Context.SaveChanges();
                 return true;
-            }
+            //}
         }
     }
 }

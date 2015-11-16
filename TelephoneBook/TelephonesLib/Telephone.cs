@@ -11,12 +11,13 @@ namespace TelephoneBook.TelephonesLib
             Id = Guid.NewGuid();
         }
 
-        public Telephone(Guid id, Guid personId, string description, string number)
+        public Telephone(Guid id, Guid personId, string description, string number, Person person)
         {
             Id = id;
             PersonId = personId;
             Description = description;
             Number = number;
+            Person = person;
         }
 
         [Key]
@@ -29,12 +30,16 @@ namespace TelephoneBook.TelephonesLib
         public string Description { get; set; }
         public string Number { get; set; }
 
+        [Browsable(false)]
+        public Person Person { get; set; }
+
         public void CopyTo(Telephone telephone)
         {
             telephone.Id = Id;
             telephone.PersonId = PersonId;
             telephone.Description = Description;
             telephone.Number = Number;
+            telephone.Person = Person;
         }
 
         public override string ToString()

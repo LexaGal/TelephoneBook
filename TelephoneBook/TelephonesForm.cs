@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TelephoneBook.DatabaseStructure;
 using TelephoneBook.DatabaseStructure.Repository;
 using TelephoneBook.TelephonesLib;
 
@@ -22,8 +23,9 @@ namespace TelephoneBook
         {
             InitializeComponent();
 
-            _personsRepository = new PersonsRepository();
-            _telephonesRepository = new TelephonesRepository();
+            Phones phones = new Phones();
+            _personsRepository = new PersonsRepository(phones);
+            _telephonesRepository = new TelephonesRepository(phones);
 
             CreatePersonsWithTelephonesList();
 
@@ -41,23 +43,8 @@ namespace TelephoneBook
                 AllowNew = true,
                 AllowRemove = true
             };
-
-            foreach (Telephone telephone in _telephonesRepository.GetAll())
-            {
-                try
-                {
-                    Person person = _persons.SingleOrDefault(p => p.Id == telephone.PersonId);
-                    if (person != null)
-                    {
-                        person.AddTelephone(telephone);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.StackTrace);
-                }
-            }
         }
+
 
         private void SetBindingForTelephonesDataGridView()
         {
@@ -119,7 +106,6 @@ namespace TelephoneBook
                 person.Patronymic = patronymic;
                 _personsRepository.Save(person, person.Id);
             }
-            //PersonsComboBox.DataSource = new BindingList<Person>(_persons);
         }
 
         private void RemovePersonButtonClick(object sender, EventArgs e)
@@ -187,5 +173,6 @@ namespace TelephoneBook
                 TelephonesDataGridView.DataSource = new BindingList<Telephone>(person.Telephones);
             }
         }
+        
     }
 }

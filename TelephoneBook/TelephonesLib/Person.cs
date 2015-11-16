@@ -51,8 +51,7 @@ namespace TelephoneBook.TelephonesLib
             }
         }
 
-        [NotMapped]
-        public List<Telephone> Telephones { get; private set; }
+        public virtual IList<Telephone> Telephones { get; private set; }
 
         public Person(Guid id, string name, string surname, string patronymic, List<Telephone> telephones)
         {
@@ -86,7 +85,7 @@ namespace TelephoneBook.TelephonesLib
                 telephone.CopyTo(oldTelephone);
                 return;
             }
-            
+
             Telephones.Add(telephone);
         }
 

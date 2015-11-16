@@ -5,6 +5,7 @@ namespace TelephoneBook.DatabaseStructure.Repository
 {
     public interface IRepository<T> : IDisposable where T : class
     {
+        Phones Context { get; set; }
         List<T> GetAll(Func<T, bool> func = null);
         T Get(Guid id);
         bool Save(T value, Guid id);

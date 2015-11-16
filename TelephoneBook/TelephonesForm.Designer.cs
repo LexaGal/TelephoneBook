@@ -55,7 +55,6 @@ namespace TelephoneBook
             this.PersonsComboBox.Location = new System.Drawing.Point(10, 13);
             this.PersonsComboBox.Name = "PersonsComboBox";
             this.PersonsComboBox.Size = new System.Drawing.Size(175, 21);
-            //this.PersonsComboBox.Sorted = true;
             this.PersonsComboBox.TabIndex = 0;
             this.PersonsComboBox.SelectedIndexChanged += new System.EventHandler(this.PersonsComboBoxSelectedIndexChanged);
             // 

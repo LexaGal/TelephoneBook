@@ -31,7 +31,7 @@ namespace TelephoneBook.TelephonesLib
         public string Number { get; set; }
 
         [Browsable(false)]
-        public Person Person { get; set; }
+        public virtual Person Person { get; set; }
 
         public void CopyTo(Telephone telephone)
         {

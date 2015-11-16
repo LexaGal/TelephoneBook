@@ -5,8 +5,13 @@ namespace TelephoneBook.DatabaseStructure
 {
     public class Phones : DbContext
     {
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Telephone> Telephones { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Telephone> Telephones { get; set; }
+
+        public Phones()
+        {
+            Configuration.LazyLoadingEnabled = true;
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

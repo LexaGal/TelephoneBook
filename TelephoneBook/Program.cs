@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Runtime.Remoting.Contexts;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TelephoneBook;
 
 namespace TelephoneBook
 {

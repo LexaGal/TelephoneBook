@@ -30,7 +30,6 @@ namespace TelephoneBook
         /// </summary>
         private void InitializeComponent()
         {
-            this.PersonsComboBox = new System.Windows.Forms.ComboBox();
             this.TelephonesDataGridView = new System.Windows.Forms.DataGridView();
             this.SavePersonButton = new System.Windows.Forms.Button();
             this.SaveTelephoneButton = new System.Windows.Forms.Button();
@@ -44,32 +43,22 @@ namespace TelephoneBook
             this.RemovePersonButton = new System.Windows.Forms.Button();
             this.AddNewPersonButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.PersonsListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.TelephonesDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PersonsComboBox
-            // 
-            this.PersonsComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.PersonsComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.PersonsComboBox.FormattingEnabled = true;
-            this.PersonsComboBox.Location = new System.Drawing.Point(10, 13);
-            this.PersonsComboBox.Name = "PersonsComboBox";
-            this.PersonsComboBox.Size = new System.Drawing.Size(175, 21);
-            this.PersonsComboBox.TabIndex = 0;
-            this.PersonsComboBox.SelectedIndexChanged += new System.EventHandler(this.PersonsComboBoxSelectedIndexChanged);
             // 
             // TelephonesDataGridView
             // 
             this.TelephonesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TelephonesDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.TelephonesDataGridView.Location = new System.Drawing.Point(192, 12);
+            this.TelephonesDataGridView.Location = new System.Drawing.Point(192, 3);
             this.TelephonesDataGridView.Name = "TelephonesDataGridView";
-            this.TelephonesDataGridView.Size = new System.Drawing.Size(272, 164);
+            this.TelephonesDataGridView.Size = new System.Drawing.Size(272, 217);
             this.TelephonesDataGridView.TabIndex = 1;
             // 
             // SavePersonButton
             // 
-            this.SavePersonButton.Location = new System.Drawing.Point(67, 109);
+            this.SavePersonButton.Location = new System.Drawing.Point(65, 71);
             this.SavePersonButton.Name = "SavePersonButton";
             this.SavePersonButton.Size = new System.Drawing.Size(57, 23);
             this.SavePersonButton.TabIndex = 2;
@@ -79,7 +68,7 @@ namespace TelephoneBook
             // 
             // SaveTelephoneButton
             // 
-            this.SaveTelephoneButton.Location = new System.Drawing.Point(189, 195);
+            this.SaveTelephoneButton.Location = new System.Drawing.Point(189, 247);
             this.SaveTelephoneButton.Name = "SaveTelephoneButton";
             this.SaveTelephoneButton.Size = new System.Drawing.Size(57, 23);
             this.SaveTelephoneButton.TabIndex = 3;
@@ -89,21 +78,21 @@ namespace TelephoneBook
             // 
             // NameTb
             // 
-            this.NameTb.Location = new System.Drawing.Point(67, 41);
+            this.NameTb.Location = new System.Drawing.Point(65, 3);
             this.NameTb.Name = "NameTb";
             this.NameTb.Size = new System.Drawing.Size(117, 20);
             this.NameTb.TabIndex = 4;
             // 
             // SurnameTb
             // 
-            this.SurnameTb.Location = new System.Drawing.Point(67, 63);
+            this.SurnameTb.Location = new System.Drawing.Point(65, 25);
             this.SurnameTb.Name = "SurnameTb";
             this.SurnameTb.Size = new System.Drawing.Size(117, 20);
             this.SurnameTb.TabIndex = 5;
             // 
             // PatronymicTb
             // 
-            this.PatronymicTb.Location = new System.Drawing.Point(67, 85);
+            this.PatronymicTb.Location = new System.Drawing.Point(65, 47);
             this.PatronymicTb.Name = "PatronymicTb";
             this.PatronymicTb.Size = new System.Drawing.Size(117, 20);
             this.PatronymicTb.TabIndex = 6;
@@ -111,7 +100,7 @@ namespace TelephoneBook
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 43);
+            this.label1.Location = new System.Drawing.Point(7, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 7;
@@ -120,7 +109,7 @@ namespace TelephoneBook
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 67);
+            this.label2.Location = new System.Drawing.Point(6, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 8;
@@ -129,7 +118,7 @@ namespace TelephoneBook
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 90);
+            this.label3.Location = new System.Drawing.Point(6, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 9;
@@ -137,7 +126,7 @@ namespace TelephoneBook
             // 
             // RemoveTelephoneButton
             // 
-            this.RemoveTelephoneButton.Location = new System.Drawing.Point(249, 195);
+            this.RemoveTelephoneButton.Location = new System.Drawing.Point(249, 247);
             this.RemoveTelephoneButton.Name = "RemoveTelephoneButton";
             this.RemoveTelephoneButton.Size = new System.Drawing.Size(61, 23);
             this.RemoveTelephoneButton.TabIndex = 10;
@@ -147,7 +136,7 @@ namespace TelephoneBook
             // 
             // RemovePersonButton
             // 
-            this.RemovePersonButton.Location = new System.Drawing.Point(6, 109);
+            this.RemovePersonButton.Location = new System.Drawing.Point(4, 71);
             this.RemovePersonButton.Name = "RemovePersonButton";
             this.RemovePersonButton.Size = new System.Drawing.Size(59, 23);
             this.RemovePersonButton.TabIndex = 11;
@@ -157,7 +146,7 @@ namespace TelephoneBook
             // 
             // AddNewPersonButton
             // 
-            this.AddNewPersonButton.Location = new System.Drawing.Point(126, 109);
+            this.AddNewPersonButton.Location = new System.Drawing.Point(124, 71);
             this.AddNewPersonButton.Name = "AddNewPersonButton";
             this.AddNewPersonButton.Size = new System.Drawing.Size(59, 23);
             this.AddNewPersonButton.TabIndex = 12;
@@ -168,17 +157,27 @@ namespace TelephoneBook
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 179);
+            this.label4.Location = new System.Drawing.Point(188, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Select some rows to save/remove them";
             // 
+            // PersonsListBox
+            // 
+            this.PersonsListBox.FormattingEnabled = true;
+            this.PersonsListBox.Location = new System.Drawing.Point(3, 98);
+            this.PersonsListBox.Name = "PersonsListBox";
+            this.PersonsListBox.Size = new System.Drawing.Size(179, 173);
+            this.PersonsListBox.TabIndex = 15;
+            this.PersonsListBox.SelectedIndexChanged += new System.EventHandler(this.PersonsListBoxSelectedIndexChanged);
+            // 
             // TelephonesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 221);
+            this.ClientSize = new System.Drawing.Size(471, 275);
+            this.Controls.Add(this.PersonsListBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.AddNewPersonButton);
             this.Controls.Add(this.RemovePersonButton);
@@ -192,9 +191,9 @@ namespace TelephoneBook
             this.Controls.Add(this.SaveTelephoneButton);
             this.Controls.Add(this.SavePersonButton);
             this.Controls.Add(this.TelephonesDataGridView);
-            this.Controls.Add(this.PersonsComboBox);
             this.Name = "TelephonesForm";
             this.Text = "TelephonesBook";
+            this.Load += new System.EventHandler(this.TelephonesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TelephonesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,7 +202,6 @@ namespace TelephoneBook
 
         #endregion
 
-        private System.Windows.Forms.ComboBox PersonsComboBox;
         private System.Windows.Forms.DataGridView TelephonesDataGridView;
         private Button SavePersonButton;
         private Button SaveTelephoneButton;
@@ -217,6 +215,7 @@ namespace TelephoneBook
         private Button RemovePersonButton;
         private Button AddNewPersonButton;
         private Label label4;
+        private ListBox PersonsListBox;
     }
 }
 

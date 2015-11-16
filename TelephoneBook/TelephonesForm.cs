@@ -28,7 +28,7 @@ namespace TelephoneBook
             SetBindingForTelephonesDataGridView();
 
             BindingSource bindingSource = new BindingSource { DataSource = _persons };
-            PersonsComboBox.DataSource = bindingSource;
+            PersonsListBox.DataSource = bindingSource;
         }
 
         private void CreatePersonsWithTelephonesList()
@@ -52,9 +52,9 @@ namespace TelephoneBook
             };
         }
 
-        private void PersonsComboBoxSelectedIndexChanged(object sender, EventArgs e)
+        private void PersonsListBoxSelectedIndexChanged(object sender, EventArgs e)
         {
-            Person person = PersonsComboBox.SelectedItem as Person;
+            Person person = PersonsListBox.SelectedItem as Person;
             if (person != null)
             {
                 if (person.Telephones != null)
@@ -94,7 +94,7 @@ namespace TelephoneBook
             string surname = SurnameTb.Text;
             string patronymic = PatronymicTb.Text;
 
-            Person person = PersonsComboBox.SelectedItem as Person;
+            Person person = PersonsListBox.SelectedItem as Person;
             if (person != null)
             {
                 person.Name = name;
@@ -106,7 +106,7 @@ namespace TelephoneBook
 
         private void RemovePersonButtonClick(object sender, EventArgs e)
         {
-            Person person = PersonsComboBox.SelectedItem as Person;
+            Person person = PersonsListBox.SelectedItem as Person;
             if (person != null)
             {
                 _personsRepository.Delete(person.Id);
@@ -132,7 +132,7 @@ namespace TelephoneBook
         private void SaveTelephonesButtonClick(object sender, EventArgs e)
         {
             List<Telephone> telephones = DataGridViewRowsToTelephones();
-            Person person = PersonsComboBox.SelectedItem as Person;
+            Person person = PersonsListBox.SelectedItem as Person;
 
             if (person != null)
             {
@@ -148,7 +148,7 @@ namespace TelephoneBook
         private void RemoveTelephonesButtonClick(object sender, EventArgs e)
         {
             List<Telephone> telephones = DataGridViewRowsToTelephones();
-            Person person = PersonsComboBox.SelectedItem as Person;
+            Person person = PersonsListBox.SelectedItem as Person;
 
             if (person != null)
             {
@@ -168,6 +168,11 @@ namespace TelephoneBook
                 // !!!
                 TelephonesDataGridView.DataSource = new BindingList<Telephone>(person.Telephones);
             }
+        }
+
+        private void TelephonesForm_Load(object sender, EventArgs e)
+        {
+
         }
         
     }

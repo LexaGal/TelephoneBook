@@ -44,6 +44,15 @@ namespace TelephoneBook
             this.AddNewPersonButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.PersonsListBox = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.HouseTb = new System.Windows.Forms.TextBox();
+            this.StreetTb = new System.Windows.Forms.TextBox();
+            this.CityTb = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.FlatTb = new System.Windows.Forms.TextBox();
+            this.SaveAddressButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TelephonesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +60,7 @@ namespace TelephoneBook
             // 
             this.TelephonesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TelephonesDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.TelephonesDataGridView.Location = new System.Drawing.Point(192, 3);
+            this.TelephonesDataGridView.Location = new System.Drawing.Point(365, 3);
             this.TelephonesDataGridView.Name = "TelephonesDataGridView";
             this.TelephonesDataGridView.Size = new System.Drawing.Size(272, 217);
             this.TelephonesDataGridView.TabIndex = 1;
@@ -68,7 +77,7 @@ namespace TelephoneBook
             // 
             // SaveTelephoneButton
             // 
-            this.SaveTelephoneButton.Location = new System.Drawing.Point(189, 247);
+            this.SaveTelephoneButton.Location = new System.Drawing.Point(447, 245);
             this.SaveTelephoneButton.Name = "SaveTelephoneButton";
             this.SaveTelephoneButton.Size = new System.Drawing.Size(57, 23);
             this.SaveTelephoneButton.TabIndex = 3;
@@ -126,7 +135,7 @@ namespace TelephoneBook
             // 
             // RemoveTelephoneButton
             // 
-            this.RemoveTelephoneButton.Location = new System.Drawing.Point(249, 247);
+            this.RemoveTelephoneButton.Location = new System.Drawing.Point(507, 245);
             this.RemoveTelephoneButton.Name = "RemoveTelephoneButton";
             this.RemoveTelephoneButton.Size = new System.Drawing.Size(61, 23);
             this.RemoveTelephoneButton.TabIndex = 10;
@@ -146,7 +155,7 @@ namespace TelephoneBook
             // 
             // AddNewPersonButton
             // 
-            this.AddNewPersonButton.Location = new System.Drawing.Point(124, 71);
+            this.AddNewPersonButton.Location = new System.Drawing.Point(123, 71);
             this.AddNewPersonButton.Name = "AddNewPersonButton";
             this.AddNewPersonButton.Size = new System.Drawing.Size(59, 23);
             this.AddNewPersonButton.TabIndex = 12;
@@ -157,7 +166,7 @@ namespace TelephoneBook
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 227);
+            this.label4.Location = new System.Drawing.Point(410, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 13);
             this.label4.TabIndex = 13;
@@ -168,15 +177,98 @@ namespace TelephoneBook
             this.PersonsListBox.FormattingEnabled = true;
             this.PersonsListBox.Location = new System.Drawing.Point(3, 98);
             this.PersonsListBox.Name = "PersonsListBox";
-            this.PersonsListBox.Size = new System.Drawing.Size(179, 173);
+            this.PersonsListBox.Size = new System.Drawing.Size(235, 173);
             this.PersonsListBox.TabIndex = 15;
             this.PersonsListBox.SelectedIndexChanged += new System.EventHandler(this.PersonsListBoxSelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(185, 54);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "House";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(185, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Street";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(186, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "City ";
+            // 
+            // HouseTb
+            // 
+            this.HouseTb.Location = new System.Drawing.Point(244, 49);
+            this.HouseTb.Name = "HouseTb";
+            this.HouseTb.Size = new System.Drawing.Size(117, 20);
+            this.HouseTb.TabIndex = 18;
+            // 
+            // StreetTb
+            // 
+            this.StreetTb.Location = new System.Drawing.Point(244, 27);
+            this.StreetTb.Name = "StreetTb";
+            this.StreetTb.Size = new System.Drawing.Size(117, 20);
+            this.StreetTb.TabIndex = 17;
+            // 
+            // CityTb
+            // 
+            this.CityTb.Location = new System.Drawing.Point(244, 5);
+            this.CityTb.Name = "CityTb";
+            this.CityTb.Size = new System.Drawing.Size(117, 20);
+            this.CityTb.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(186, 76);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Flat";
+            // 
+            // FlatTb
+            // 
+            this.FlatTb.Location = new System.Drawing.Point(244, 71);
+            this.FlatTb.Name = "FlatTb";
+            this.FlatTb.Size = new System.Drawing.Size(117, 20);
+            this.FlatTb.TabIndex = 22;
+            // 
+            // SaveAddressButton
+            // 
+            this.SaveAddressButton.Location = new System.Drawing.Point(244, 97);
+            this.SaveAddressButton.Name = "SaveAddressButton";
+            this.SaveAddressButton.Size = new System.Drawing.Size(57, 23);
+            this.SaveAddressButton.TabIndex = 24;
+            this.SaveAddressButton.Text = "Save";
+            this.SaveAddressButton.UseVisualStyleBackColor = true;
+            this.SaveAddressButton.Click += new System.EventHandler(this.SaveAddressButtonClick);
             // 
             // TelephonesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 275);
+            this.ClientSize = new System.Drawing.Size(641, 275);
+            this.Controls.Add(this.SaveAddressButton);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.FlatTb);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.HouseTb);
+            this.Controls.Add(this.StreetTb);
+            this.Controls.Add(this.CityTb);
             this.Controls.Add(this.PersonsListBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.AddNewPersonButton);
@@ -216,6 +308,15 @@ namespace TelephoneBook
         private Button AddNewPersonButton;
         private Label label4;
         private ListBox PersonsListBox;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private TextBox HouseTb;
+        private TextBox StreetTb;
+        private TextBox CityTb;
+        private Label label8;
+        private TextBox FlatTb;
+        private Button SaveAddressButton;
     }
 }
 

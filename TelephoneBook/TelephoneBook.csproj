@@ -53,6 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseStructure\UnitOfWork\PhonesUnitOfWork.cs" />
+    <Compile Include="TelephonesLib\Address.cs" />
+    <Compile Include="Models\Mapping\AddressMap.cs" />
+    <Compile Include="Models\Mapping\PersonMap.cs" />
+    <Compile Include="Models\Mapping\TelephoneMap.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="TelephonesForm.cs">
       <SubType>Form</SubType>
@@ -60,17 +65,14 @@
     <Compile Include="TelephonesForm.Designer.cs">
       <DependentUpon>TelephonesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseStructure\Repository\IPersonsRepository.cs" />
     <Compile Include="DatabaseStructure\Repository\IRepository.cs" />
-    <Compile Include="DatabaseStructure\Repository\ITelephonesRepository.cs" />
     <Compile Include="TelephonesLib\Person.cs" />
-    <Compile Include="DatabaseStructure\Repository\PersonsRepository.cs" />
-    <Compile Include="DatabaseStructure\Phones.cs" />
+    <Compile Include="DatabaseStructure\DbContext\Phones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DatabaseStructure\Repository\Repository.cs" />
+    <Compile Include="TelephonesLib\StringExt.cs" />
     <Compile Include="TelephonesLib\Telephone.cs" />
-    <Compile Include="DatabaseStructure\Repository\TelephonesRepository.cs" />
     <EmbeddedResource Include="TelephonesForm.resx">
       <DependentUpon>TelephonesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,7 +99,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

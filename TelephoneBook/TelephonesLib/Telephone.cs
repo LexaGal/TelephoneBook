@@ -20,7 +20,6 @@ namespace TelephoneBook.TelephonesLib
             Person = person;
         }
 
-        [Key]
         [Browsable(false)]
         public Guid Id { get; private set; }
 
@@ -44,7 +43,7 @@ namespace TelephoneBook.TelephonesLib
 
         public override string ToString()
         {
-            return String.Format("{0}: {1}", Description, Number);
+            return $"{Description}: {Number}";
         }
     }
 }

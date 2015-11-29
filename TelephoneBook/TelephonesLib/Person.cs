@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using TelephoneBook.Annotations;
@@ -14,7 +15,6 @@ namespace TelephoneBook.TelephonesLib
         private string _surname;
         private string _patronymic;
 
-        [Key]
         public Guid Id { get; private set; }
 
         public string Name
@@ -51,14 +51,16 @@ namespace TelephoneBook.TelephonesLib
         }
 
         public virtual IList<Telephone> Telephones { get; private set; }
+        public virtual Address Address { get; set; }
 
-        public Person(Guid id, string name, string surname, string patronymic, List<Telephone> telephones)
+        public Person(Guid id, string name, string surname, string patronymic, List<Telephone> telephones, Address address)
         {
             Id = id;
             Name = name;
             Surname = surname;
             Patronymic = patronymic;
             Telephones = telephones ?? new List<Telephone>();
+            Address = address;
         }
 
         public Person()
@@ -76,6 +78,7 @@ namespace TelephoneBook.TelephonesLib
             if (telephone.PersonId == Guid.Empty)
             {
                 telephone.PersonId = Id;
+                telephone.Person = this;
             }
 
             Telephone oldTelephone = Telephones.SingleOrDefault(tele => tele.Id == telephone.Id);
@@ -98,7 +101,7 @@ namespace TelephoneBook.TelephonesLib
 
         public override string ToString()
         {
-            return String.Format("{0} {1} {2}", Name, Surname, Patronymic);
+            return $"{Name} {Surname} {Patronymic}";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -107,7 +110,7 @@ namespace TelephoneBook.TelephonesLib
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             var handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
